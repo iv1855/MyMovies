@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 public class NetworkUtils {
 
@@ -31,7 +32,7 @@ public class NetworkUtils {
     public static final int POPULARITY = 0;
     public static final int TOP_RATED = 1;
 
-    public static URL buildURL(int sortBy, int page) {
+    private static URL buildURL(int sortBy, int page) {
         URL result = null;
         String methodOfSort;
         if (sortBy == POPULARITY) {
@@ -53,7 +54,18 @@ public class NetworkUtils {
         return result;
     }
 
-
+    public static JSONObject getJSONFromNetwork(int sortBy, int page) {
+        JSONObject result = null;
+        URL url = buildURL(sortBy, page);
+        try {
+            result = new JSONLoadTask().execute(url).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
     public static class JSONLoadTask extends AsyncTask<URL, Void, JSONObject> {
         @Override
