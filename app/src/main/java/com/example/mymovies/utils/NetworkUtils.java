@@ -25,7 +25,7 @@ public class NetworkUtils {
     public static final String PARAMS_PAGE = "page";
 
     private static final String API_KEY = "44da32d2561451b0acf05688fa5f527a";
-    public static final String LANGUAGE_VALUE = "ru_RU";
+    public static final String LANGUAGE_VALUE = "ru-RU";
     public static final String SORT_BY_POPULARITY = "popularity.desc";
     public static final String SORT_BY_TOP_RATED = "vote_average.desc";
 
