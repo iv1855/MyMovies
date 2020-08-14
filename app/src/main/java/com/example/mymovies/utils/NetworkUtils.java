@@ -21,7 +21,7 @@ public class NetworkUtils {
 
     public static final String PARAMS_API_KEY = "api_key";
     public static final String PARAMS_LANGUAGE = "language";
-    public static final String PARAMS_SORT_BY = "popularity.desc";
+    public static final String PARAMS_SORT_BY = "sort_by";
     public static final String PARAMS_PAGE = "page";
 
     private static final String API_KEY = "44da32d2561451b0acf05688fa5f527a";

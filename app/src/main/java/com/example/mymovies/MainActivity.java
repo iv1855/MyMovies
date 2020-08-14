@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSetPopularity(View view) {
-        setMethodOfSort(false);
+//        setMethodOfSort(false);
         switchSort.setChecked(false);
     }
 
     public void onClickSetTopRated(View view) {
-        setMethodOfSort(true);
+//        setMethodOfSort(true);
         switchSort.setChecked(true);
     }
 
