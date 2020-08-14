@@ -47,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         switchSort.setChecked(false);
+        movieAdapter.setOnPosterClickListener(new MovieAdapter.OnPosterClickListener() {
+            @Override
+            public void onPosterClick(int position) {
+                Toast.makeText(MainActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+        movieAdapter.setOnReachEndListener(new MovieAdapter.OnReachEndListener() {
+            @Override
+            public void onReachEnd() {
+                Toast.makeText(MainActivity.this, " Конец списка", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void onClickSetPopularity(View view) {
